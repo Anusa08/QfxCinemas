@@ -1,7 +1,8 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import StackNav from './Navigation/stack';
 import Splashscreen from './screens/splashscreen/splash';
+import compareAppVersion from './utils/checkAppVersion';
 
 
 interface IProps {}
@@ -12,9 +13,12 @@ interface IProps {}
  **/
 
 const Entry: FC<IProps> = props => {
-  
+  useEffect(()=>{
+    setTimeout(()=>{
+      compareAppVersion()
+    },4000)
+  })
   return (
-    // <Splashscreen/>
     <StackNav/>
   );
 };

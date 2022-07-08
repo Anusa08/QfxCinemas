@@ -1,0 +1,1 @@
+export const BaseUrl: string = 'https://staging.qfxcinemas.com:2005/';
