@@ -4,6 +4,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import Nowshowing from '../screens/home/Nowshowing';
 import MyProfileScreen from '../screens/Myprofilescreen/myprofile';
 import TopTab from './toptab';
+import HomeWrapper from '@components/Wrappers/Home/home';
 
 interface IProps {}
 
@@ -19,7 +20,7 @@ const Drawer = createDrawerNavigator();
  return(
   
     <Drawer.Navigator  initialRouteName='Home' screenOptions={{headerShown:false}} > 
-      <Drawer.Screen name='Home' component={TopTab}/>
+      <Drawer.Screen name='Home' component={HomeWrapper}/>
       <Drawer.Screen name= 'My Profile' component={MyProfileScreen}/>
 
     </Drawer.Navigator>

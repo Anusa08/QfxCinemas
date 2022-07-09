@@ -1,30 +1,79 @@
-import React, { FC } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import React, {FC, useEffect} from 'react';
+import {View, StyleSheet, SafeAreaView, FlatList} from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
+import {requestNowShowing} from '@redux/actions/nowShowingActions';
+import MovieCard from '@components/MovieCard/MovieCard';
+import {BaseUrl} from '@constants/baseUrl';
+import colors from '@assets/styles/colors';
 
-interface IProps {}
-
-/**
-* @author Anusha Pandey
-* @function @Nowshowing
-**/
-
-
- const Nowshowing :FC<IProps> = (props) => { 
-
-const { container } = styles
- return(
-  <View style={container}>
-    <Text>Nowshowing</Text>
-  </View>
-  )
+interface IProps {
+  renderItem: any;
 }
 
+/**
+ * @author Anusha Pandey
+ * @function @NowShowing
+ **/
+
+const NowShowing: FC<IProps> = () => {
+  const {parentContainer, container, flatList} = styles;
+  const dispatch = useDispatch();
+  const nowShowing = useSelector((state: any) => {
+    return state.nowShowing.nowShowing;
+  });
+  console.log(nowShowing);
+  useEffect(() => {
+    dispatch(requestNowShowing());
+  }, [dispatch]);
+  return (
+    <SafeAreaView style={parentContainer}>
+      <View style={container}>
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          style={flatList}
+          data={nowShowing}
+          keyExtractor={(show, index) => 'key' + index}
+          numColumns={2}
+          renderItem={(show: any) => {
+            return (
+              <MovieCard
+                urlToImage={`${BaseUrl}${show.item.thumbnailUrl}`}
+                title={show.item.name}
+                eventRating={show.item.eventRating}
+                showID={show.item.showID}
+                eventID={show.item.eventID}
+                mediaPlayerTrailerURL={show.item?.mediaURL}
+                annotation={show.item.annotation}
+                showLengthInMinutes={show.item.showLengthInMinutes}
+                director={show.item.director}
+                cast={show.item.cast}
+                genre={show.item.genre}
+                companyId={show.item.companyId}
+                theatreID={show.item.theatreID}
+                showDate={show.item.showDate}
+                theatreName={show.item.theatreName}
+                city={show.item?.city}
+                dtLocalRelease={show.item?.dtLocalRelease}
+              />
+            );
+          }}
+        />
+      </View>
+    </SafeAreaView>
+  );
+};
 
 const styles = StyleSheet.create({
+  parentContainer: {
+    backgroundColor: colors.background,
+    width: '100%',
+    height: '100%',
+  },
   container: {
-   flex:1,
-   justifyContent: 'center',
-   alignItems: 'center',
- }
-})
-export default Nowshowing;
+    marginRight: 10,
+    justifyContent: 'center',
+  },
+  flatList: {},
+});
+
+export default NowShowing;
