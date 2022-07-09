@@ -65,7 +65,6 @@ const Cinemas: FC<IProps> = () => {
                         showDate={movies.item.showDate}
                         theatreID={movies.item.theatreID}
                         eventID={movies.item.eventID}
-                        dtLocalRelease={movies.item?.dtLocalRelease}
                       />
                     );
                   }}

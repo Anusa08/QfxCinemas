@@ -1,9 +1,8 @@
+import { AuthProvider } from '@components/Context/AuthContext';
 import globalStore from '@redux/store/Rootstore';
 import React, {FC, useEffect} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
 import { Provider } from 'react-redux';
 import StackNav from './Navigation/stack';
-import Splashscreen from './screens/splashscreen/splash';
 import compareAppVersion from './utils/checkAppVersion';
 
 
@@ -21,9 +20,12 @@ const Entry: FC<IProps> = props => {
     },4000)
   })
   return (
-    <Provider store={globalStore}>
+    <AuthProvider>
+       <Provider store={globalStore}>
         <StackNav/>
     </Provider>
+    </AuthProvider>
+    
     
   );
 };

@@ -21,7 +21,6 @@ const NowShowing: FC<IProps> = () => {
   const nowShowing = useSelector((state: any) => {
     return state.nowShowing.nowShowing;
   });
-  console.log(nowShowing);
   useEffect(() => {
     dispatch(requestNowShowing());
   }, [dispatch]);
@@ -53,7 +52,7 @@ const NowShowing: FC<IProps> = () => {
                 showDate={show.item.showDate}
                 theatreName={show.item.theatreName}
                 city={show.item?.city}
-                dtLocalRelease={show.item?.dtLocalRelease}
+          
               />
             );
           }}

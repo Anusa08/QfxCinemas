@@ -5,6 +5,7 @@ import { create } from 'react-test-renderer';
 import { createStackNavigator } from '@react-navigation/stack';
 import EntryNav from './entryNav';
 import Splashscreen from '../screens/splashscreen/splash';
+import MovieDetailsWrapper from '@components/Wrappers/MovieDetailsWrappers/MovieDetails';
 
 
 interface IProps {}
@@ -31,6 +32,7 @@ useEffect(()=>{
           <Stack.Screen name="Home" component={Splashscreen} />
         ) : null}
         <Stack.Screen name='Homes' component={EntryNav}/>
+        <Stack.Screen name='MovieDetailsWrapper' component={MovieDetailsWrapper}/>
       </Stack.Navigator>
     </NavigationContainer>
  
