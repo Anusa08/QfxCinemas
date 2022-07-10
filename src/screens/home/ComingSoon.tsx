@@ -24,7 +24,7 @@ const ComingSoon: FC<IProps> = () => {
   useEffect(() => {
     dispatch(requestUpcoming());
   }, [dispatch]);
-    
+
   return (
     <SafeAreaView style={parentContainer}>
       <View style={container}>
@@ -53,7 +53,6 @@ const ComingSoon: FC<IProps> = () => {
                 theatreID={show.item?.theatreID}
                 showDate={show.item?.showDate}
                 eventID={show.item?.eventID}
-                
               />
             );
           }}

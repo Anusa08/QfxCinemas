@@ -52,7 +52,6 @@ const NowShowing: FC<IProps> = () => {
                 showDate={show.item.showDate}
                 theatreName={show.item.theatreName}
                 city={show.item?.city}
-          
               />
             );
           }}

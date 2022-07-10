@@ -23,7 +23,6 @@ export const AuthProvider = ({children}) => {
       .catch(error => console.error('Load Error =>', error));
   }, []);
 
- 
   useEffect(() => {
     if (access_token) {
       try {

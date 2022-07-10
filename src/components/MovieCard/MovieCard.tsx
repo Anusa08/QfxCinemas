@@ -56,7 +56,6 @@ interface IProps {
  * @function @MovieCard
  **/
 
-
 const MovieCard: FC<IProps> = ({
   showID,
   title,
@@ -75,14 +74,8 @@ const MovieCard: FC<IProps> = ({
   showDate,
   eventID,
 }) => {
-  const {
-    container,
-    image,
-    movieTitle,
-    rating,
-    imageContainer,
-    movieInfo,
-  } = styles;
+  const {container, image, movieTitle, rating, imageContainer, movieInfo} =
+    styles;
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
   const handleOnPress = () => {
     return navigation.navigate('MovieDetailsWrapper', {
@@ -104,7 +97,7 @@ const MovieCard: FC<IProps> = ({
       eventID,
     });
   };
- 
+
   return (
     <SafeAreaView style={container}>
       <TouchableOpacity onPress={handleOnPress}>
@@ -154,7 +147,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     color: colors.primary,
     marginLeft: 10,
-  }
+  },
 });
 
 export default MovieCard;

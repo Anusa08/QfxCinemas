@@ -2,17 +2,14 @@ import React, {FC, useContext} from 'react';
 import {View, StyleSheet} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
- import LoginWrapper from '@components/Wrappers/login/login';
+import LoginWrapper from '@components/Wrappers/login/login';
 import HomeWrapper from '@components/Wrappers/Home/home';
 import ProfileWrapper from '@components/Wrappers/Myprofile/Myprofile';
 import CustomDrawer from '@components/customDrawer/customDrawer';
 
-
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import AntIcon from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import colors from '@assets/styles/colors';
 import {AuthContext} from '@components/Context/AuthContext';
@@ -29,7 +26,7 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigator: FC<IProps> = () => {
   const {userInfo} = useContext(AuthContext);
   const {iconContainer, icon} = styles;
-  
+
   return (
     <Drawer.Navigator
       drawerContent={props => <CustomDrawer {...props} />}
@@ -87,7 +84,6 @@ const DrawerNavigator: FC<IProps> = () => {
           }}
         />
       ) : null}
-    
     </Drawer.Navigator>
   );
 };

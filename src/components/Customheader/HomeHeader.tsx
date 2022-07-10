@@ -17,7 +17,6 @@ interface IProps {}
  * @function @CustomHeader
  **/
 
-
 const CustomHeader: FC<IProps> = () => {
   const navigation = useNavigation();
   const {

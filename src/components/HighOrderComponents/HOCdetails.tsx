@@ -5,7 +5,6 @@ import CustomHeader from '@components/Customheader/MovieDetails';
  * @function @HOC
  **/
 
-
 const HOCScreen = ({children}: any) => {
   return (
     <>

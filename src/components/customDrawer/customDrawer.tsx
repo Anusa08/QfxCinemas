@@ -15,7 +15,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 interface IProps {}
 
 /**
- * @author Anusha Pandey 
+ * @author Anusha Pandey
  * @function @CustomDrawer
  **/
 

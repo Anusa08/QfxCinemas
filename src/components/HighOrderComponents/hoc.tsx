@@ -1,7 +1,7 @@
 import React from 'react';
 import CustomHeader from '../Customheader/HomeHeader';
 /**
- * @author Anusha Pandey 
+ * @author Anusha Pandey
  * @function @HOC
  **/
 

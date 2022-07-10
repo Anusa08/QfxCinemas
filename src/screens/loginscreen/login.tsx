@@ -15,7 +15,7 @@ import colors from '@assets/styles/colors';
 interface IProps {}
 
 /**
- * @author Anusha Pandey 
+ * @author Anusha Pandey
  * @function @Login
  **/
 
